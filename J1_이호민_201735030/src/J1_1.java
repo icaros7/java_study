@@ -6,6 +6,7 @@
     Scanner 객체를 이용하여 이름과 한국 나이 계산을 위한 생년을 입력 받아 출력
  */
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class J1_1 {
