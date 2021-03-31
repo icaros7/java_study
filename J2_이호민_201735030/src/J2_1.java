@@ -28,16 +28,14 @@ public class J2_1 {
             _input[2] = sc.nextInt();
         }
         catch (InputMismatchException e){
-            System.out.println("정상적이지 않은 값 입니다.");
-            System.exit(1);
+            callExit("정수만 입력 가능");
         }
         catch (Exception e){
-            System.exit(1);
+            callExit(e.toString());
         }
         finally {
             if ((_input[1] - _input[0]) <= 0 || _input[2] == 0) {
-                System.out.println("정상적이지 않은 값 입니다.");
-                System.exit(1);
+                callExit("입력 값 오류");
             }
         }
 
@@ -54,5 +52,12 @@ public class J2_1 {
 
         System.out.println( _input[0] + "부터 " + _input[1] + "까지 " + _input[2] + "의 배수에 속하는 수들의 합: " + sumMulti);
         System.out.println( _input[0] + "부터 " + _input[1] + "까지 " + _input[2] + "의 배수를 제외한 수들의 합: " + sumNormal);
+    }
+
+    private static void callExit(String str){
+
+        System.out.println("정상적이지 않은 값 : " + str);
+        System.exit(1);
+
     }
 }
