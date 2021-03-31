@@ -28,7 +28,7 @@ public class J2_1 {
             _input[2] = sc.nextInt();
         }
         catch (InputMismatchException e){
-            callExit("정수만 입력 가능");
+            callExit("Int 범위 내 정수만 입력 가능");
         }
         catch (Exception e){
             callExit(e.toString());
