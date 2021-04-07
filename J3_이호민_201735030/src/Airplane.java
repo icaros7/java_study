@@ -23,48 +23,46 @@
 
  */
 
-public class J1_1 {
-    private static class Airplane{
-        int number;
-        String model;
-        String company;
+public class Airplane {
+    private int number;
+    private String model;
+    private String company;
 
-        public Airplane(){
-            this.number = 0;
-            this.model = "";
-            this.company = "";
-        }
-
-        public Airplane(String model, String company){
-            this.number = 0;
-            this.model = model;
-            this.company = company;
-        }
-
-        public Airplane(String model, String company,int number){
-            this.number = number;
-            this.model = model;
-            this.company = company;
-        }
-
-        void showAirplane(){
-            System.out.println("비행기 번호 : " + getModel());
-            System.out.println("비행기 회사 : " + getCompany());
-            System.out.println("최대 승객 수 : " + getNumber() + "\n");
-        }
-
-        void setNumber(int number){ this.number = number; }
-
-        void setModel(String model){ this.model = model; }
-
-        void setCompany(String company){ this.company = company; }
-
-        int getNumber(){ return this.number; }
-
-        String getModel(){ return this.model; }
-
-        String getCompany(){ return this.company; }
+    public Airplane() {
+        this.number = 0;
+        this.model = "";
+        this.company = "";
     }
+
+    public Airplane(String model, String company) {
+        this.number = 0;
+        this.model = model;
+        this.company = company;
+    }
+
+    public Airplane(String model, String company, int number) {
+        this.number = number;
+        this.model = model;
+        this.company = company;
+    }
+
+    void showAirplane() {
+        System.out.println("비행기 번호 : " + getModel());
+        System.out.println("비행기 회사 : " + getCompany());
+        System.out.println("최대 승객 수 : " + getNumber() + "\n");
+    }
+
+    void setNumber(int number) { this.number = number; }
+
+    void setModel(String model) { this.model = model; }
+
+    void setCompany(String company) { this.company = company; }
+
+    int getNumber() { return this.number; }
+
+    String getModel() { return this.model; }
+
+    String getCompany() { return this.company; }
 
     public static void main(String[] args) {
         Airplane plane1 = new Airplane();
@@ -82,3 +80,5 @@ public class J1_1 {
         plane3.showAirplane();
     }
 }
+
+
