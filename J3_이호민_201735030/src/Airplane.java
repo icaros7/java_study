@@ -35,7 +35,10 @@ public class Airplane {
     }
 
     public Airplane(String model, String company) {
-        this.number = 0;
+        /*
+            this.number = 0;
+            Review: public Airplane(String Model, String Company)에서 number까지 0으로 초기화시킴
+         */
         this.model = model;
         this.company = company;
     }
