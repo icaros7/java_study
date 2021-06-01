@@ -19,7 +19,7 @@ public class AirplaneFinder {
             String line;
             while ((line = buffer.readLine()) != null){ // 한줄씩 읽어오기
                 String[] s = line.split(" "); // " "를 기준으로 잘라 배열 s에 저장
-                map.put(s[0], new Airplane(s[0], s[1], Integer.parseInt(s[2]))); // 식별번호를 Key, 불러오 정보로 만들어진 Airplane을 Value로 추가
+                map.put(s[0], new Airplane(s[0], s[1], Integer.parseInt(s[2]))); // 식별번호를 Key, 불러온 정보로 만들어진 Airplane을 Value로 추가
             }
         }
         catch (IOException e) {
@@ -40,7 +40,7 @@ public class AirplaneFinder {
 
                 addNew = answer.equals("y") || answer.equals("Y"); // 답변에 따른 boolean 값 정의
                 if (addNew) {
-                    ArrayList<String> al = new ArrayList<>(3);
+                    ArrayList<String> al = new ArrayList<>(3); // 비행기 정보를 저장할 ArrayList 초기화
 
                     System.out.print("비행기 식별번호: ");
                     al.add(buffer.readLine());
@@ -48,10 +48,10 @@ public class AirplaneFinder {
                     al.add(buffer.readLine());
                     System.out.print("비행기 탑승인원: ");
                     al.add(buffer.readLine());
-                    String line = al.get(0) + " " + al.get(1) + " " + al.get(2);
+                    String line = al.get(0) + " " + al.get(1) + " " + al.get(2); // 단순 출력을 위해 정해진 포맷으로 스트링 생성
 
                     fileWriter.write(line, 0, line.length());
-                    fileWriter.write("\r\n", 0, 2);
+                    fileWriter.write("\r\n", 0, 2); // 개행
                 }
                 else { break; }
                 System.out.println();
@@ -63,12 +63,14 @@ public class AirplaneFinder {
         }
     }
 
+    // Hashmap 검색 메서드
     void findAirplane(){
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in); // 불필요한 try-catch 문 제거를 위해 Scanner 사용
 
         System.out.print("검색할 비행기 식별번호를 입력하세요: ");
         String temp = sc.nextLine();
 
+        // HashMap Key에서 입력 값 비교 후 출력
         for (String id : map.keySet()){
             if (map.get(id).getIdentify().equals(temp)) { System.out.println(map.get(id).toString()); }
         }
