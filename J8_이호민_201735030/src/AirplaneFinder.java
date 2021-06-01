@@ -70,7 +70,7 @@ public class AirplaneFinder {
         String temp = sc.nextLine();
 
         for (String id : map.keySet()){
-            if (map.get(id).getIdentify().equals(temp)) { System.out.print(map.get(id).toString() + "\n"); }
+            if (map.get(id).getIdentify().equals(temp)) { System.out.println(map.get(id).toString()); }
         }
 
         System.out.println();
