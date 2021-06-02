@@ -50,8 +50,8 @@ public class AirplaneFinder {
                     al.add(buffer.readLine());
                     String line = al.get(0) + " " + al.get(1) + " " + al.get(2); // 단순 출력을 위해 정해진 포맷으로 스트링 생성
 
-                    fileWriter.write(line, 0, line.length());
                     fileWriter.write("\r\n", 0, 2); // 개행
+                    fileWriter.write(line, 0, line.length());
                 }
                 else { break; }
                 System.out.println();
